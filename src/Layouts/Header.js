@@ -11,7 +11,7 @@ function Header(props) {
 
     const convertAddresstoName = (addr) => {
         const len = address.length
-        return addr.slice(0, 3) + '...' + address.slice(len - 3, len)
+        return addr.slice(0, 5) + '...' + address.slice(len - 2, len)
     }
 
     return (
@@ -96,8 +96,9 @@ function Header(props) {
                             <button className="desktop-min:w-full text-white font-bold uppercase tracking-wider text-lg px-6 py-3 rounded-2xl outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150">
                                 Withdraw
                             </button>
-                            <button className="desktop-min:w-full bg-green-600 text-white font-bold uppercase tracking-wider text-lg px-6 py-3 outline-none focus:outline-none mr-1 mb-1">
-                                {/* { isConnected === true ? `Disconnect | ${convertAddresstoName(address)}` : "Connect wallet" } */}
+                            <button
+                                className="desktop-min:w-full bg-green-600 text-white font-bold uppercase tracking-wider text-lg px-6 py-3 rounded-xl outline-none focus:outline-none mr-1 mb-1"
+                                onClick={props.logOut}>
                                 { convertAddresstoName(address) } | { balance.toFixed(3) }
                             </button>
                         </div>
